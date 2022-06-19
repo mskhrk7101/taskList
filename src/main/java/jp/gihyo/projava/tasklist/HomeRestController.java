@@ -1,5 +1,6 @@
 package jp.gihyo.projava.tasklist;
 
+import org.springframework.boot.SpringApplication;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -12,6 +13,9 @@ import java.util.stream.Collectors;
 
 @RestController
 public class HomeRestController {
+    public static void main(String[] args) {
+        SpringApplication.run(HomeRestController.class, args);
+    }
     record TaskItem(String id, String task, String deadline, boolean done) {}
     private List<TaskItem> taskItems = new ArrayList<>();
 
